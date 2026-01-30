@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3E5F5"
+    tools:context=".DashboardActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:layout_above="@+id/bottom_navigation_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Back Button -->
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Back to Home"
+                android:backgroundTint="#B39DDB"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="20dp"
+                android:elevation="3dp" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/dashboardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progress Overview"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#4A148C"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="October 10, 2025"
+                android:textColor="#6A1B9A"
+                android:textSize="16sp"
+                android:layout_marginBottom="25dp" />
+
+            <!-- Habit Performance Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/performanceTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✨ Daily Performance Snapshot"
+                        android:textColor="#9C27B0"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/habitProgressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Habit Days Tracked: 0 / 30"
+                        android:textColor="#6A1B9A"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <ProgressBar
+                        android:id="@+id/habitProgressChart"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"
+                        android:max="30"
+                        android:progress="10"
+                        android:progressTint="#7E57C2"
+                        android:backgroundTint="#EDE7F6"
+                        android:scaleY="1.3"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/taskProgressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tasks Completed: 0 / 10"
+                        android:textColor="#6A1B9A"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <ProgressBar
+                        android:id="@+id/taskProgressChart"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"
+                        android:max="10"
+                        android:progress="4"
+                        android:progressTint="#FF9800"
+                        android:backgroundTint="#FFE0B2"
+                        android:scaleY="1.3" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Statistics Bar Graph Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:padding="20dp"
+                android:layout_marginBottom="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/statisticsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊 Weekly Habit Statistics"
+                        android:textColor="#9C27B0"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp" />
+
+                    <!-- MPAndroidChart BarChart -->
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Task Input Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/taskEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="New Task (e.g., Read 10 pages)"
+                        android:padding="12dp"
+                        android:textColor="#4A148C"
+                        android:textColorHint="#BDBDBD"
+                        android:background="@android:color/transparent"
+                        android:inputType="textCapSentences" />
+
+                    <Button
+                        android:id="@+id/addTaskButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ADD"
+                        android:backgroundTint="#9C27B0"
+                        android:textColor="#FFFFFF"
+                        android:elevation="3dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Task List Section -->
+            <TextView
+                android:id="@+id/pendingTasksLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pending Tasks"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#4A148C"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:id="@+id/taskListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="70dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#7E57C2"
+        android:elevation="10dp"
+        android:padding="6dp">
+
+        <Button
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Home"
+            android:textColor="#D1C4E9"
+            android:drawableTop="@android:drawable/ic_menu_today"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/nav_dashboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Dashboard"
+            android:textColor="#FFFFFF"
+            android:drawableTop="@android:drawable/ic_menu_sort_by_size"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
