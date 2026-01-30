@@ -1,0 +1,21 @@
+This project uses XML-based layouts for designing the Android user interface, combined with Kotlin/Java for application logic.
+
+Key Highlights
+
+Designed responsive and reusable UI layouts using XML
+
+Implemented UI logic using Kotlin/Java
+
+Followed Material Design principles for consistent user experience
+
+Built adaptable layouts for different screen sizes and orientations
+
+Technologies Used
+
+Kotlin / Java
+
+XML (Android UI Layouts)
+
+Android Studio
+
+Material Design Components
