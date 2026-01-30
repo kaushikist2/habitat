@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3E5F5"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation_bar"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/appTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YOUR HABITAT"
+                android:textColor="#4A148C"
+                android:textStyle="italic"
+                android:textSize="26sp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Date -->
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friday, October 10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#6A1B9A"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Focus Today Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_card_purple"
+                android:padding="24dp"
+                android:elevation="6dp">
+
+                <TextView
+                    android:id="@+id/todayText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What's Your Focus Today?"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/habitEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Start building your next win..."
+                    android:background="@drawable/rounded_input_light"
+                    android:padding="14dp"
+                    android:textColor="#311B92"
+                    android:textColorHint="#8E8E93"
+                    android:inputType="text"
+                    android:layout_marginBottom="16dp" />
+
+                <Button
+                    android:id="@+id/addHabitButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Commit to This Habit"
+                    android:backgroundTint="#D1C4E9"
+                    android:textColor="#4A148C"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/markAsDoneButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Habit Achieved!"
+                    android:backgroundTint="#B39DDB"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/resetProgressButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reset Progress"
+                    android:backgroundTint="#CE93D8"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_card_white"
+                android:padding="24dp"
+                android:layout_marginTop="30dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:id="@+id/progressHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consistency Tracker"
+                    android:textColor="#4A148C"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:max="30"
+                    android:progress="0"
+                    android:progressTint="#7E57C2"
+                    android:backgroundTint="#EDE7F6"
+                    android:scaleY="1.2"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/progressTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Days of Consistency: 0 / 30"
+                    android:textColor="#4A148C"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/habitsQueuedTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Active Habits"
+                android:textColor="#4A148C"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/exportButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Download Your Data"
+                    android:backgroundTint="#B39DDB"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="3dp" />
+
+                <Button
+                    android:id="@+id/deleteAllButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Clear All Habits"
+                    android:backgroundTint="#E57373"
+                    android:textColor="#FFFFFF"
+                    android:elevation="3dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/streakTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Streak: 0 Day"
+                android:textColor="#4A148C"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/habitListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_card_white"
+                android:padding="10dp"
+                android:elevation="3dp"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#7E57C2"
+        android:elevation="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <Button
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Home"
+            android:textColor="#FFFFFF"
+            android:drawableTop="@android:drawable/ic_menu_today"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/nav_dashboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Dashboard"
+            android:textColor="#D1C4E9"
+            android:drawableTop="@android:drawable/ic_menu_sort_by_size"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="12sp" />
+    </LinearLayout>
+</RelativeLayout>
